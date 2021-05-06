@@ -4,18 +4,18 @@ package com.addressbook;
  * state,city,zipcode, age and email
  */
 public class ContactInfo {
-     String firstName;
-     String lastName;
-     String address;
-     String city;
-     String state;
-     int zip;
-     long number;
-     String email;
+    String firstName;
+    String lastName;
+    String address;
+    String city;
+    String state;
+    int zip;
+    long number;
+    String email;
 
-     ContactInfo(String firstName, String lastName, String address, String city, String state, int zip, long number,
-                    String email) {
-        super();
+    ContactInfo(String firstName, String lastName, String address, String city, String state, int zip, long number,
+                String email) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;

@@ -10,4 +10,12 @@ public class AddressBookTest {
         boolean result = addressBook.addContacts(contacts);
         Assertions.assertTrue(result);
     }
+    @Test
+    public void givenEditNameInAddressBookWhenNameReturnTrue() {
+        AddressBook addressBook = new AddressBook();
+        ContactInfo contacts = new ContactInfo("Devendra", "Kumar", "Garkha", "Saran", "Bihar", 841311, 8123273639l, "deva@gmail.com");
+        boolean result = addressBook.addContacts(contacts);
+        ContactInfo editContact = addressBook.editContacts(addressBook.contactList, "Devendra", "address","editContacts");
+        Assertions.assertEquals("Garkha", editContact.address);
+    }
 }
