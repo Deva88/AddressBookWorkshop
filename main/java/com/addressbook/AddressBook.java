@@ -1,6 +1,7 @@
 package com.addressbook;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /*@Description-Creating a Address Book.
@@ -91,5 +92,17 @@ public class AddressBook {
             e.printStackTrace();
         }
         return contactDataList;
+    }
+    /*Add new address book using HashMap*/
+    public HashMap<String, List<ContactInfo>> createNewAddAddressBook(String addressBookName) {
+        HashMap<String, List<ContactInfo>> addressBookMap;
+        try {
+            addressBookMap.put(addressBookName, new ArrayList<ContactInfo>());
+            System.out.println("New Address Book Created with Name : " + addressBookName);
+        } catch (Exception e) {
+            System.out.println("Invalid name" + e);
+            e.printStackTrace();
+        }
+        return addressBookMap;
     }
 }

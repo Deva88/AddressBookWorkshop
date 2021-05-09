@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class AddressBookTest {
@@ -40,4 +41,12 @@ public class AddressBookTest {
         List<ContactInfo> contactList = addressBook.addMultipleContactsList(contactDataList);
         Assertions.assertEquals(2, contactList.size());
     }
+    @Test
+    public void givenContactInAddressBookReturnTrue() {
+        AddressBook addressBook = new AddressBook();
+        ContactInfo contacts = new ContactInfo("Devendra", "Kumar", "Garkha", "Saran", "Bihar", 841311, 8123273639L, "dev@gmail.com");
+        HashMap<String, List<ContactInfo>> contactsList = addressBook.addContacts("Details", contacts);
+        Assertions.assertEquals(1, contactsList.get("Details").size());
+    }
+
 }
