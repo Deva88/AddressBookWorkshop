@@ -4,29 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*@Description-Creating a Address Book.
- * Contacts are created.
- * Add a new contacts into a address book.
- */
+ * Delete a contact using person first name ina address book.*/
 public class AddressBook {
-
     public List<ContactInfo> contactList;
 
-    /* @Description - Create one addContacts() method. */
-    public boolean addContacts(ContactInfo contacts) {
-        System.out.println(contacts);
-        List<ContactInfo> contactList = new ArrayList<>();
+    /* @Description - Add new contacts to the address book  */
+
+    public List<ContactInfo> addContacts(ContactInfo contact) {
+        contactList = new ArrayList<>();
         try {
-            contactList.add(contacts);
-            System.out.println(contactList);
-            return true;
+            contactList.add(contact);
+            return contactList;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+        return contactList;
     }
-    /*create one editContacts() method
-     * Check a first name is match in address book then change details.
-     */
+
+    /*Edit the contact details in address book.
+     * Check a first name is match in address book then change details of that person.*/
     public ContactInfo editContacts(List<ContactInfo> contactList, String firstName, String name, String editDetails) {
         try {
             for(ContactInfo contact : contactList){
@@ -65,5 +61,23 @@ public class AddressBook {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /*Delete a contact using person first name ina address book. */
+    public boolean deleteContacts(boolean contactsList, String firstName) {
+        try {
+            for (ContactInfo contact : contactsList) {
+                if (contact.firstName.equals(firstName)) {
+                    contactsList.remove(contactsList.indexOf(contact));
+                    System.out.println("Enter first name : " +firstName);
+                    break;
+                }
+            }
+            return contactsList;
+        } catch (Exception e) {
+            System.out.println("Enterd Name was not found :" +e);
+            e.printStackTrace();
+        }
+        return contactsList;
     }
 }
