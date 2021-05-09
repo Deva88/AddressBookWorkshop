@@ -80,4 +80,16 @@ public class AddressBook {
         }
         return contactsList;
     }
+    /*Add Multiple contacts in address book. */
+    public List<ContactInfo> addMultipleContactsList(List<ContactInfo> contactDataList) {
+        try {
+            for (ContactInfo contacts : contactDataList) {
+                addContacts(contacts);
+            }
+            return contactList;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return contactDataList;
+    }
 }
